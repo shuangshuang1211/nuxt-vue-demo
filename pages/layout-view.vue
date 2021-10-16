@@ -74,7 +74,15 @@ export default {
   name: "LayoutView",
   computed: {
     ...mapState(['user'])
-  }
+  },
+  head () {
+    return {
+      title: 'NuxtDemo - RealWorld',
+      // meta: [
+      //   { hid: 'description', name: 'description', content: this.article.description }
+      // ]
+    }
+  },
 }
 </script>
 
