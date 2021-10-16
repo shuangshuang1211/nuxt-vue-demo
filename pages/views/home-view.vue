@@ -119,7 +119,7 @@ export default {
   },
   watchQuery: ['page', 'tag', 'tab'],
   async asyncData ({ query, params, store}) {
-    console.log('query', query, 'params', params)
+    // console.log('query', query, 'params', params)
     let page = Number.parseInt(query.page || 1)
     let limit = 2
     let tag = query.tag
@@ -139,7 +139,7 @@ export default {
 
     articles.forEach((article) => article.favoriteDisabled = false)
 
-    console.log('home_articleList', articles, 'articlesCount', articlesCount)
+    // console.log('home_articleList', articles, 'articlesCount', articlesCount)
     const totalPage = Math.ceil(articlesCount / limit)
 
     return {

@@ -29,7 +29,7 @@
       </button>
     </template>
     <template v-else>
-      <nuxt-link class="btn btn-outline-secondary btn-sm" :to="'/article/'+ article.slug" >
+      <nuxt-link class="btn btn-outline-secondary btn-sm" :to="'/editor/'+ article.slug" >
         <i class="ion-edit"></i> Edit Article
       </nuxt-link>
       &nbsp;&nbsp;
@@ -67,13 +67,13 @@ export default {
     async followHandler () {
       if (!this.article.author.following) {
         const res = await followUser(this.article.author.username)
-        console.log('follow===>', res)
+        // console.log('follow===>', res)
         if (res.status === 200) {
           this.article.author.following = true
         }
       } else {
         const res = await deleteFollowUser(this.article.author.username)
-        console.log('deleteFollow===>', res)
+        // console.log('deleteFollow===>', res)
         if (res.status === 200) {
           this.article.author.following = false
         }

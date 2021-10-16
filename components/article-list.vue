@@ -18,7 +18,7 @@
               @click="favoriteHandler(article)"
               :disabled="article.favoriteDisabled"
             >
-                  <i class="ion-heart"></i> {{ article.favoritesCount}}
+              <i class="ion-heart"></i> {{ article.favoritesCount}}
             </button>
         </div>
         <nuxt-link class="preview-link" :to="'/article/' + article.slug">

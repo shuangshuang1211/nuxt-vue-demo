@@ -11,7 +11,7 @@
         &nbsp;
         <nuxt-link :to="'/profile/' + comment.author.username" class="comment-author">{{ comment.author.username }}</nuxt-link>
         <span class="date-posted">{{ comment.createdAt | date('MMM DD, YYYY') }}</span>
-        <span class="mod-options" v-if="comment.author.username === user.username" :click="deleteCommentHandler(comment)">
+        <span v-if="comment.author.username === user.username" class="mod-options" @click="deleteCommentHandler(comment)">
           <i class="ion-trash-a"></i>
         </span>
       </div>
@@ -51,8 +51,9 @@ export default {
   methods: {
     async deleteCommentHandler (comment) {
       const res = await deleteComment(this.article.slug, comment.id)
-      if (res.status === 200) {
-        console.log('评论删除成功')
+      if (res.status === 204) {
+        // console.log('评论删除成功')
+        this.comments = this.comments.filter((com) => com.id !== comment.id)
       }
     }
   }

@@ -43,13 +43,11 @@ module.exports = {
               name: 'editor',
               path: '/editor',
               component: resolve(__dirname, 'pages/views/edit-article-view.vue'),
-              // children: [
-              //   {
-              //     name: 'article',
-              //     path: '/article-slug-here',
-              //     component: resolve(__dirname, 'pages/views/edit-article-view.vue'),
-              //   }
-              // ]
+            },
+            {
+              name: 'update',
+              path: '/editor/:slug',
+              component: resolve(__dirname, 'pages/views/edit-article-view.vue'),
             }
           ]
         }

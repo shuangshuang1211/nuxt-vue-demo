@@ -77,7 +77,7 @@ export default {
   },
   async asyncData ({ params }) {
     const {data, status} = await getArticle(params.slug)
-    console.log('data_article', data);
+    // console.log('data_article', data);
     let article
     if (data && status === 200) {
       article = data.article

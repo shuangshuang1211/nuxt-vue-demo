@@ -64,13 +64,22 @@ export default {
   computed: {
     ...mapState(['user'])
   },
+  mounted() {
+    this.newUserInfo = {
+      ...this.newUserInfo,
+      username: this.user.username,
+      email: this.user.email,
+      image: this.user.image,
+      bio: this.user.bio,
+    }
+  },
   methods: {
     async updateProfileHandler () {
       // console.log('this.store.state', this.$store)
       const res = await updateProfile({user: this.newUserInfo})
       if (res && res.status === 200) {
         const currUser = res.data.user
-        console.log('updateProfile', currUser)
+        // console.log('updateProfile', currUser)
         this.$store.commit('cacheUser', currUser)
         this.$router.push(`/profile/${currUser.username}`)
       }

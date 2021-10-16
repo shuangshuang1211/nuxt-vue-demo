@@ -46,7 +46,7 @@ export const postComment = (slug, data) => request({
 
 // delete a comment for article
 export const deleteComment = (slug, id) => request({
-  method: 'POST',
+  method: 'DELETE',
   url: `/api/articles/${slug}/comments/${id}`,
 })
 

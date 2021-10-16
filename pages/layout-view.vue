@@ -77,7 +77,7 @@ export default {
   },
   head () {
     return {
-      title: 'NuxtDemoTest - RealWorld',
+      title: 'NuxtDemo - RealWorld',
       // meta: [
       //   { hid: 'description', name: 'description', content: this.article.description }
       // ]

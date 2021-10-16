@@ -67,7 +67,7 @@ export default {
     ArticleList
   },
   async asyncData ({params, query, store}) {
-    console.log('params', params, 'query', query)
+    // console.log('params', params, 'query', query)
     const tab = query.tab || 'favorited-articles'
     const currPage = query.page || 1
     let limit = 5
@@ -78,7 +78,7 @@ export default {
     if (res && res.status === 200) {
       const { data } = res
       profile = data.profile
-      console.log('profile_info===>', data)
+      // console.log('profile_info===>', data)
       let query = { limit, offset: (currPage - 1) * limit}
       const params = store.state.user && tab === 'my-articles' ?
         { author: profile.username, ...query} :
@@ -92,7 +92,7 @@ export default {
       console.log('get profile info failed')
     }
     const totalPage = Math.ceil(totalArticles / limit)
-    console.log('profile_articles===>', articles)
+    // console.log('profile_articles===>', articles)
 
     return {
       profile,
